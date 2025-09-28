@@ -1,0 +1,50 @@
+# No python code to execute, just providing the HTML file content.
+# The user will copy and paste this into a file named index.html.
+print("""
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Prayer Times</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- A placeholder for FontAwesome -->
+</head>
+<body>
+    <div id="app-container">
+        <div id="header">
+            <h1 id="location">Fetching location...</h1>
+            <p id="date"></p>
+        </div>
+
+        <div id="next-prayer-container">
+            <h2 id="next-prayer-name">Next Prayer</h2>
+            <p id="next-prayer-countdown">--:--:--</p>
+        </div>
+
+        <div id="prayer-times-container">
+            <!-- Prayer times will be injected here by JavaScript -->
+        </div>
+
+        <div id="settings-icon" onclick="toggleSettingsModal()">⚙️</div>
+    </div>
+
+    <div id="settings-modal" class="hidden">
+        <div class="modal-content">
+            <span class="close-button" onclick="toggleSettingsModal()">&times;</span>
+            <h2>Iqama Time Settings</h2>
+            <p>Set the minutes between Adhan and Iqama for each prayer.</p>
+            <div id="iqama-settings-form">
+                <!-- Iqama settings inputs will be injected here -->
+            </div>
+            <button id="save-settings-btn">Save Settings</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+""")
