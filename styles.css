@@ -3,7 +3,7 @@
   color-scheme: dark;
 }
 *{box-sizing:border-box}
-body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto; background:linear-gradient(180deg,#07101a 0%, #071a24 100%); color:#e6eef4; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica; background:linear-gradient(180deg,#07101a 0%, #071a24 100%); color:#e6eef4; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px}
 #app{width:100%;max-width:920px}
 header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
 header h1{margin:0;font-weight:600}
