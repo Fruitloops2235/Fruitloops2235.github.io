@@ -1,0 +1,23 @@
+:root{
+  --bg:#0b0f14; --card:#0f1720; --muted:#9aa6b2; --accent:#ffd166;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto; background:linear-gradient(180deg,#07101a 0%, #071a24 100%); color:#e6eef4; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px}
+#app{width:100%;max-width:920px}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+header h1{margin:0;font-weight:600}
+.controls{display:flex;gap:8px;align-items:center}
+button,select,input{background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit;padding:8px 10px;border-radius:8px}
+.times{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.prayer{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:14px;border-radius:12px;display:flex;flex-direction:column;gap:6px}
+.prayer .name{font-weight:600}
+.prayer .time{font-size:1.25rem}
+.prayer .iqama{font-size:.9rem;color:var(--muted)}
+.next{margin-top:14px;padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center}
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.6)}
+.modal.hidden{display:none}
+.modal-content{background:var(--card);padding:16px;border-radius:12px;width:320px;display:flex;flex-direction:column;gap:10px}
+.modal-actions{display:flex;justify-content:flex-end;gap:8px}
+footer{text-align:center;margin-top:12px;color:var(--muted)}
+@media(max-width:520px){header{flex-direction:column;gap:10px}}

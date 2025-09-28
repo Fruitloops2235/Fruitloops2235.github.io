@@ -1,48 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Islamic Prayer Times</title>
-    <!-- The only change is adding ./ to the beginning of the path -->
-    <link rel="stylesheet" href="./style.css"> 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- A placeholder for FontAwesome -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Prayer Times — Iqama & Alarms</title>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-    <div id="app-container">
-        <div id="header">
-            <h1 id="location">Fetching location...</h1>
-            <p id="date"></p>
-        </div>
+  <main id="app">
+    <header>
+      <h1>Prayer Times</h1>
+      <div class="controls">
+        <button id="loc-btn">Use My Location</button>
+        <select id="method-select"></select>
+        <button id="settings-btn">Settings</button>
+      </div>
+    </header>
 
-        <div id="next-prayer-container">
-            <h2 id="next-prayer-name">Next Prayer</h2>
-            <p id="next-prayer-countdown">--:--:--</p>
-        </div>
+    <section class="today">
+      <div class="date" id="date"></div>
+      <div class="location" id="location"></div>
+    </section>
 
-        <div id="prayer-times-container">
-            <!-- Prayer times will be injected here by JavaScript -->
-        </div>
+    <section class="times" id="times">
+      <!-- populated by JS -->
+    </section>
 
-        <div id="settings-icon" onclick="toggleSettingsModal()">⚙️</div>
+    <section class="next" id="next">
+      <!-- next prayer countdown -->
+    </section>
+
+    <footer>
+      <small>Built for GitHub Pages</small>
+    </footer>
+  </main>
+
+  <!-- Settings modal (simple) -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Settings</h3>
+      <label>Calculation method:
+        <select id="calcMethod"></select>
+      </label>
+      <label>Asr method:
+        <select id="asrMethod">
+          <option value="Standard">Shafi'i (Standard)</option>
+          <option value="Hanafi">Hanafi</option>
+        </select>
+      </label>
+      <label>Iqama offsets (mins) — comma separated (Fajr,Dhuhr,Asr,Maghrib,Isha):
+        <input id="iqamaInput" placeholder="10,5,5,10,10" />
+      </label>
+      <label>Enable notifications:
+        <input type="checkbox" id="notifyToggle" />
+      </label>
+      <div class="modal-actions">
+        <button id="saveSettings">Save</button>
+        <button id="closeModal">Close</button>
+      </div>
     </div>
+  </div>
 
-    <div id="settings-modal" class="hidden">
-        <div class="modal-content">
-            <span class="close-button" onclick="toggleSettingsModal()">&times;</span>
-            <h2>Iqama Time Settings</h2>
-            <p>Set the minutes between Adhan and Iqama for each prayer.</p>
-            <div id="iqama-settings-form">
-                <!-- Iqama settings inputs will be injected here -->
-            </div>
-            <button id="save-settings-btn">Save Settings</button>
-        </div>
-    </div>
+  <audio id="alarmSound" src="assets/alarm.mp3" preload="auto"></audio>
 
-    <!-- The only change is adding ./ to the beginning of the path -->
-    <script src="./script.js"></script> 
+  <script src="js/praytimes.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
